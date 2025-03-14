@@ -8,10 +8,5 @@
 </head>
 <body>
 
-테						스
-
-
-
-			트
 </body>
 </html>
