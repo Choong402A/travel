@@ -2,7 +2,19 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>travel</display-name>
   
-  <servlet>
+  
+<servlet>
+<servlet-name>toadminlist</servlet-name>
+<servlet-class>admin.toadminlist</servlet-class>
+</servlet>  
+
+<servlet-mapping>
+<servlet-name>toadminlist</servlet-name>
+<url-pattern>/admin/toadminlist.do</url-pattern>
+</servlet-mapping>  
+  
+  
+<servlet>
 <servlet-name>idcheck</servlet-name>
 <servlet-class>admin.idcheck</servlet-class>
 </servlet>  
