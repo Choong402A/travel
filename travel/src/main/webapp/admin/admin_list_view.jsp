@@ -4,10 +4,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%
-String page_total = mlist.get(0).g
-
-%>
 
     
 <section>
