@@ -10,7 +10,7 @@ dto_member dm = (dto_member)se.getAttribute("dto");
 <header class="headercss">
     <div class="header_div">
         <p><img src="./img/logo.png" class="logo_sm"> ADMINISTRATOR</p>
-        <p><%=dm.getMname() %> 님 관리자 <a href="#">[개인정보 수정]</a> <a href="./logout.do">[로그아웃]</a></p>
+        <p><%=dm.getMname() %> 님 관리자 <a href="#">[개인정보 수정]</a> <a href="./loginout.do">[로그아웃]</a></p>
     </div>
 </header>
 <nav class="navcss">

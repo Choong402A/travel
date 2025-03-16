@@ -21,23 +21,25 @@ public class m_update {
 				return null;
 			} 
 			
-			
-			if(verified.equals("Y")) {
-				this.sql = "update member set verified=’Y’ where mid=’mid’;";
-				this.result = "verified";
-			} else if(verified.equals("N")){
-				this.sql = "update member set verified=’N’ where mid=’mid’;";
-				this.result = "unverified";
-			} else {
-				return null;
-			}
-
+			this.sql = "update member set verified=? where mid=?";
 			this.ps = this.con.prepareStatement(this.sql);
+			
+			this.ps.setString(1, verified);
+			this.ps.setString(2, mid);
 			qresult = this.ps.executeUpdate();
 			
-			if (qresult == 0 ) {
+			if (qresult > 0 ) {
+				
+				if (verified.equals("Y")) {
+					this.result = "verified";	
+				} else {
+					this.result = "unverified";	
+				}
+
+
+			} else {
 				this.result = null;
-			} 
+			}
 			
 			
 		} catch (Exception e) {

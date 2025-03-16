@@ -8,11 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 등록 페이지</title>
     <link rel="stylesheet" type="text/css" href="./css/basic.css">
-    <link rel="stylesheet" type="text/css" href="./css/login.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./css/login.css?v=2">
     <link rel="icon" href="./img/logo.png" sizes="128x128">
     <link rel="icon" href="./img/logo.png" sizes="64x64">
     <link rel="icon" href="./img/logo.png" sizes="32x32">
     <link rel="icon" href="./img/logo.png" sizes="16x16">
+    
 </head>
 <body>
     <header class="admin_title_add">
@@ -26,19 +27,23 @@
                 <li>
                 <input type="text" id="mid" class="add_input1" placeholder="생성할 관리자 아이디를 입력하세요">
                 <button type="button" id="midck" class="btn_button" onclick="midck()">중복체크</button>
-                <input type="hidden" id="midchecked"> 
+                <input type="hidden" id="midchecked" value="N"> 
+
                 </li>
                 <li>
-                    <input type="text" id="mpass" class="add_input1" placeholder="접속할 패스워드를 입력하세요">
-                    <input type="text" id="mpassck" class="add_input1" placeholder="동일한 패스워드를 입력하세요">
+                    <input type="text" id="mpass" class="add_input1" placeholder="접속할 패스워드를 입력하세요" onkeyup="pwck()">
+                    <input type="text" id="mpassck" class="add_input1" placeholder="동일한 패스워드를 입력하세요" onkeyup="pwck()">
+   
                 </li>
+                 <span id="pw_message" class="html_message"></span>
                 <li class="font_color1">관리자 기본정보 입력</li>
                 <li>
                     <input type="text" id="mname" class="add_input1" placeholder="담당자 이름을 입력하세요">
                 </li>
                 <li>
-                <input type="text" id="memail" class="add_input1 emails" placeholder="담당자 이메일을 입력하세요">
+                <input type="text" id="memail" class="add_input1 emails" placeholder="담당자 이메일을 입력하세요" onkeyup="emailcheck()">
                 </li>
+                <span id="email_message" class="html_message"></span>
                 <li class="font_color1">
 
                 <input type="text" class="add_input1 hp1" id="hp1" oninput="combintel()" placeholder="HP" value="010" maxlength="3">
@@ -72,7 +77,7 @@
             </ul>
             <span class="admin_addbtn">
                 <button type="button" class="btn_button btncolor1" title="관리자 등록" onclick="join()">관리자 등록</button>
-                <button type="button" class="btn_button btncolor2" title="관리자 취소">등록 취소</button>
+                <button type="button" class="btn_button btncolor2" title="관리자 취소" onclick="join_cancel()">등록 취소</button>
             </span>
         </div>
     </section>
@@ -82,5 +87,5 @@
         </div>
     </footer>
 </body>
-<script src="../admin/js/join.js?v=1"></script>
+<script src="../admin/js/join.js?v=2"></script>
 </html>

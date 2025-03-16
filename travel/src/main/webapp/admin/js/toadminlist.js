@@ -11,12 +11,17 @@ function join(verified, id) {
 				} else {
 					console.log(http.response);
 					alert("회원 미승인 처리 완료");
-				}	}else if(http.status==404){
-		console.log("경로오류");
-	}else if(http.status==405){
-		console.log("통신 규격 오류 발생");// get-post 불일치
-	}
-	}
+				}	
+				
+				window.location.reload();
+				
+				}else if(http.status==404){
+				console.log("경로오류");
+				}else if(http.status==405){
+				console.log("통신 규격 오류 발생");// get-post 불일치
+			}
+			
+			};
 
 	http.open("POST", "./toadminlist.do", true);
 	http.setRequestHeader("content-type", "application/x-www-form-urlencoded");

@@ -40,7 +40,7 @@ function login_submit(mid,mpass){
 	}
 }
 
-	http.open("POST","./loginok.do", true);
+	http.open("POST","./loginout.do", true);
 	http.setRequestHeader("content-type","application/x-www-form-urlencoded");
 	http.send("mid="+mid+"&mpass="+mpass);
 

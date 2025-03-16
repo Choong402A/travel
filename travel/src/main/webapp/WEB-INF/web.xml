@@ -45,13 +45,13 @@
 </servlet-mapping>
 
 <servlet>
-<servlet-name>tojoin</servlet-name>
-<servlet-class>admin.tojoin</servlet-class>
+<servlet-name>loginout</servlet-name>
+<servlet-class>admin.loginout</servlet-class>
 </servlet>  
 
 <servlet-mapping>
-<servlet-name>tojoin</servlet-name>
-<url-pattern>/admin/tojoin.do</url-pattern>
+<servlet-name>loginout</servlet-name>
+<url-pattern>/admin/loginout.do</url-pattern>
 </servlet-mapping>
 
 <servlet>
@@ -63,12 +63,22 @@
 <servlet-name>join</servlet-name>
 <url-pattern>/admin/join.do</url-pattern>
 </servlet-mapping>
+
+<servlet>
+<servlet-name>tojoin</servlet-name>
+<servlet-class>admin.tojoin</servlet-class>
+</servlet>  
+
+<servlet-mapping>
+<servlet-name>tojoin</servlet-name>
+<url-pattern>/admin/tojoin.do</url-pattern>
+</servlet-mapping>
   
   
   
   <servlet>
   <servlet-name>index</servlet-name>
-  <servlet-class>travel.index</servlet-class>
+  <servlet-class>admin.index</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>index</servlet-name>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.DistributedManager;
 
-public class loginok extends HttpServlet {
+public class loginout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PrintWriter pw = null;
 	dto_member dm = new dto_member();
@@ -44,5 +44,14 @@ public class loginok extends HttpServlet {
 		}
 		
 	}
-
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession(false);
+		session.invalidate();
+		
+		
+		RequestDispatcher rd = request.getRequestDispatcher("./index.jsp");
+		rd.forward(request, response);
+	}
 }

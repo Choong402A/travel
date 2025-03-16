@@ -37,5 +37,5 @@ ArrayList<ArrayList<String>> mlist = (ArrayList<ArrayList<String>>)request.getAt
     </div>
 </footer>
 </body>
-<script src="./js/toadminlist.js?v=1"></script>
+<script src="./js/toadminlist.js?v=2"></script>
 </html>

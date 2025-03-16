@@ -3,6 +3,7 @@ package admin;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,12 +37,15 @@ public class join extends HttpServlet {
 
 		} else {
 			this.pw.write("false");
-			
 		}
-		
-		
-		
+
 		this.pw.close();
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		RequestDispatcher rd = request.getRequestDispatcher("./add_master.jsp");
+		rd.forward(request, response);
 	}
 
 }
