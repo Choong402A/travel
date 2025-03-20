@@ -46,12 +46,18 @@
 				
 				<% }else{ 
 					int t = 0;
-					while (t < notice_top.size()) {
+					int maxCount = Math.min(3, notice_top.size()); //3과 notice_top.size() 중 작은 값 사용
+					/*t<3일 때 에러난 이유 : notice_top의 크기가 3보다 작을 때,
+					  t = 0부터 2까지 접근하려 하면 인덱스 초과 오류 (IndexOutOfBoundsException)가 발생
+					  t = 2일 때 notice_top.get(2)을 호출하면 에러 발생 (존재하지 않는 인덱스)*/
+					while (t < maxCount) {
 				%>
 				<!-- 최상단공지목록 -->
 				<ol style="background-color:grey;">
 					<li><input type="checkbox" name="n_ch" value="<%=notice_top.get(t).get(0)%>" onclick="choice_ck();"></li>
-					<li></li> <!-- 글번호 -->
+					<li>  <!-- 글번호 -->
+						<img src="../admin/ico/fire.svg" class="fileicon">
+					</li> 
 					
 					<li> <!-- 첨부파일표시 -->
 					<% 	if(notice_top.get(t).get(7) != null){%>  <!-- 첨부파일 있으면 -->

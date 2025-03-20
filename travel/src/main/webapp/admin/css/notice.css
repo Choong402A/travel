@@ -150,6 +150,9 @@
 }
 .write_view > ul > li:nth-of-type(2){
     width:800px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .cbox { 
     vertical-align: 1px;    
@@ -200,8 +203,12 @@
     height: 15px;
     object-fit: cover;
     vertical-align: middle;
+
 }
 
 .subpage_view > ol > li:nth-of-type(4) {
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
