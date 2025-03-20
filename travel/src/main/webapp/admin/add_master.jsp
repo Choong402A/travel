@@ -31,8 +31,8 @@
 
                 </li>
                 <li>
-                    <input type="text" id="mpass" class="add_input1" placeholder="접속할 패스워드를 입력하세요" onkeyup="pwck()">
-                    <input type="text" id="mpassck" class="add_input1" placeholder="동일한 패스워드를 입력하세요" onkeyup="pwck()">
+                    <input type="password" id="mpass" class="add_input1" placeholder="접속할 패스워드를 입력하세요" oninput="pwck()">
+                    <input type="password" id="mpassck" class="add_input1" placeholder="동일한 패스워드를 입력하세요" oninput="pwck()">
    
                 </li>
                  <span id="pw_message" class="html_message"></span>
