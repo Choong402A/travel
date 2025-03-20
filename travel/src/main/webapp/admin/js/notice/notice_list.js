@@ -34,7 +34,6 @@ function notice_view(no){
 
 
 //공지 삭제 버튼 클릭시 작동
-
 function notice_delete(){
 	var count=0;
 	

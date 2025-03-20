@@ -5,7 +5,8 @@ function go_list(){
 	location.href='./notice_list.do';
 }
 
-function go_notice(){
+
+function notice_modify(){
 	if(n_subject.value==""){
 		alert("공지 제목을 입력하세요.");
 	}else if(n_content.value==""){
