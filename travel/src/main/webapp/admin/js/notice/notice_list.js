@@ -34,7 +34,6 @@ function notice_view(no){
 
 
 //공지 삭제 버튼 클릭시 작동
-
 function notice_delete(){
 	var count=0;
 	
@@ -57,24 +56,10 @@ function notice_delete(){
 }
 
 
-
-//$(()=>{
-//	$("#notice_write").click(()=>{
-//		//ajax post통신 
-//		$.ajax({
-//			url : "./notice_write.do",  //BE로 보낼 경로 
-//			type : "post",  //전송방식
-//			cache : false, 
-//			success : function(response){
-//				console.log(response);
-//			},
-//			//정상적으로 값이 전송되었을때 (=xhr 200 통신이 발생시 작동)
-//			
-//			error : function(error){
-//				console.log("오류발생 : "+ error);
-//			}
-//			//비정상적으로 값이 전송되었을때 (=xhr 200 외 숫자 발생시 작동)
-//		});
-//	})
-//})
-
+function go_search(){
+	if(frm2.n_search.value==""){
+		alert("검색할 단어를 입력해주세요");
+	}else {
+		frm2.submit();
+	}
+}
