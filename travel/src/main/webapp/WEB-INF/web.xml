@@ -75,5 +75,13 @@
   	<url-pattern>/notice/notice_modify.do</url-pattern>  
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>notice_search</servlet-name>  
+  	<servlet-class>notice.notice_search</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_search</servlet-name>
+  	<url-pattern>/notice/notice_search.do</url-pattern>  
+  </servlet-mapping>
   
 </web-app>

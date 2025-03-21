@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../admin/css/basic.css?v=3">
     <link rel="stylesheet" type="text/css" href="../admin/css/login.css?v=12">
     <link rel="stylesheet" type="text/css" href="../admin/css/main.css?v=12">
-    <link rel="stylesheet" type="text/css" href="../admin/css/notice.css?v=13">
+    <link rel="stylesheet" type="text/css" href="../admin/css/notice.css?v=15">
     <link rel="icon" href="../admin/img/logo.png" sizes="128x128">
     <link rel="icon" href="../admin/img/logo.png" sizes="64x64">
     <link rel="icon" href="../admin/img/logo.png" sizes="32x32">
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!-- 헤더부분 -->
-	<%@ include file="./top.jsp" %>
+	<%@ include file="../admin/top.jsp" %>
 	<!-- 헤더부분 -->
 	
 	<!-- 메인부분 -->
@@ -26,7 +26,7 @@
 	<!-- 메인부분 -->
 	
 	<!-- 푸터부분 -->
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="../admin/footer.jsp" %>
 	<!-- 푸터부분 -->
 </body>
 </html>

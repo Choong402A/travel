@@ -35,12 +35,12 @@
 			</ul>
 			<ul>
 				<li>첨부파일</li>
-				<li>
+				<li id="af">
 				<% if(n_view.get(4)!=null){ %>
 					<%=n_view.get(4)%> &nbsp; <input type="button" value="첨부파일삭제"> &nbsp;
 					<input type="hidden" name="current_f" value="<%=n_view.get(4)%>">
 				<% } %>
-					<input type="file" name="n_filenm"> 
+					<input type="file" name="n_filenm" id="attach_f"> 
 					※ 첨부파일 최대 용량은 2MB 입니다.
 				</li>
 			</ul>

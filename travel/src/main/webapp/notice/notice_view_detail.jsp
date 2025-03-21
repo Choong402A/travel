@@ -27,7 +27,10 @@
 			<ul class="ul_height">
 				<li>공지내용</li>
 				<li>
-					<div class="notice_input3" style="overflow-y: auto;"><%=n_view.get(5)%></div>
+					<div class="notice_input3" style="overflow-y: auto;">
+<%-- 						<img src="../notice_file/<%=n_view.get(4)%>" width="100%"><br> --%>
+						<%=n_view.get(5)%>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -41,4 +44,5 @@
 		</div>
 	</section>
 </main>
+
 <script src="../admin/js/notice/notice_view.js?v=1"></script>

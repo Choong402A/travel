@@ -12,3 +12,6 @@ create table admin_notice (
 
 
 select * from admin_notice;
+
+
+select nidx, n_yn, n_subject, n_writer, n_view, n_date, n_filenm, (select count(*) from admin_notice where n_subject like '%1%') as total from admin_notice where n_subject like '%1%' order by nidx desc

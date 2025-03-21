@@ -2,12 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>) request.getAttribute("result");
+	ArrayList<ArrayList<String>> s_notice = (ArrayList<ArrayList<String>>) request.getAttribute("s_result");
 	ArrayList<ArrayList<String>> notice_top = (ArrayList<ArrayList<String>>) request.getAttribute("result_top");
+	String keyword = (String)request.getAttribute("keyword");
 	String total_page = "1"; 
 // 	out.print(notice);
-	if (notice != null && !notice.isEmpty() && notice.get(0).size() > 6) {  //전체게시글 첫번째글의 컬럼수가 6이상일때를 체크 
-		total_page = notice.get(0).get(6);  //total_page = 전체게시글 수 
+	if (s_notice != null && !s_notice.isEmpty() && s_notice.get(0).size() > 6) {  //전체게시글 첫번째글의 컬럼수가 6이상일때를 체크 
+		total_page = s_notice.get(0).get(6);  //total_page = 전체게시글 수 
 	} 
 	
 	int pg = 1;
@@ -27,7 +28,7 @@
 <main class="maincss">
 	<form id="frm" method="get" action="./notice_delete.do">  <!-- 체크한 게시글의 nidx 전달 위해 form 사용 -->
 		<section class="list_section1">
-			<p>공지사항 관리페이지</p>
+			<p>공지사항 관리 페이지</p>
 			<div class="subpage_view">
 				<ul>
 					<li><input type="checkbox" id="all_ck" onclick="ck_all(this.checked);"></li>
@@ -39,10 +40,10 @@
 					<li>조회</li>
 				</ul>
 
-				<% if(notice == null || notice.isEmpty()){ %>
+				<% if(s_notice == null || s_notice.isEmpty()){ %>
 				
 				<ol class="none_text">
-					<li>등록된 공지 내용이 없습니다.</li>
+					<li>검색된 공지 내용이 없습니다.</li>
 				</ol>
 				
 				<% }else{ 
@@ -81,22 +82,22 @@
 					//총 데이터개수 - ((페이지번호 -1)*한페이지당 출력개수)	
 	
 					int w = 0;
-					while (w < notice.size()) {
+					while (w < s_notice.size()) {
 				%>
 				<ol>
-					<li><input type="checkbox" name="n_ch" value="<%=notice.get(w).get(0)%>" onclick="choice_ck();"></li>
+					<li><input type="checkbox" name="n_ch" value="<%=s_notice.get(w).get(0)%>" onclick="choice_ck();"></li>
 					<li><%=total%></li> <!-- 글번호 -->
 					<li> <!-- 첨부파일표시 -->
-					<% 	if(notice.get(w).get(7) != null){%>  <!-- 첨부파일 있으면 -->
+					<% 	if(s_notice.get(w).get(7) != null){%>  <!-- 첨부파일 있으면 -->
 						<img src="../admin/ico/paperclip.svg" class="fileicon">
 					<% 	} %>
 					</li> 
-					<li onclick="notice_view(<%=notice.get(w).get(0)%>)" title="<%=notice.get(w).get(2)%>">
-						<%=notice.get(w).get(2)%>
+					<li onclick="notice_view(<%=s_notice.get(w).get(0)%>)" title="<%=s_notice.get(w).get(2)%>">
+						<%=s_notice.get(w).get(2)%>
 					</li> <!-- 글제목 -->
-					<li><%=notice.get(w).get(3)%></li> <!-- 작성자 -->
-					<li><%=notice.get(w).get(5).substring(0, 10)%></li> <!-- 등록일 -->
-					<li><%=notice.get(w).get(4)%></li> <!-- 조회수 -->
+					<li><%=s_notice.get(w).get(3)%></li> <!-- 작성자 -->
+					<li><%=s_notice.get(w).get(5).substring(0, 10)%></li> <!-- 등록일 -->
+					<li><%=s_notice.get(w).get(4)%></li> <!-- 조회수 -->
 				</ol>
 				<%
 						total--;
@@ -111,7 +112,7 @@
 		<section>
 			<div class="bottom_div">
 				<div class="search_div">
-					<input type="text" name="n_search">
+					<input type="text" name="n_search" value="<%=keyword%>">
 					<img src="../admin/ico/search.svg" onclick="go_search();">
 				</div>
 				<div class="board_btn">
@@ -123,19 +124,19 @@
 	
 			<div class="border_page">
 				<ul class="pageing">
-					<a href="./notice_list.do?pageNo=1"><li><img src="../admin/ico/double_left.svg"></li></a>
-					<a href="./notice_list.do?pageNo=#"><li><img src="../admin/ico/left.svg"></li></a>
+					<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=1"><li><img src="../admin/ico/double_left.svg"></li></a>
+					<a href="./notice_search.do?pageNo=#"><li><img src="../admin/ico/left.svg"></li></a>
 					<%
 					int ww = 1;
 					while (ww <= pg) {
 					%>
-						<a href="./notice_list.do?pageNo=<%=ww%>"><li><%=ww%></li></a>
+						<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=<%=ww%>"><li><%=ww%></li></a>
 					<%
 						ww++;
 					}
 					%>
-					<a href="./notice_list.do?pageNo=#"><li><img src="../admin/ico/right.svg"></li></a>
-					<a href="./notice_list.do?pageNo=<%=pg%>"><li><img src="../admin/ico/double_right.svg"></li></a>
+					<a href="./notice_search.do?pageNo=#"><li><img src="../admin/ico/right.svg"></li></a>
+					<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=<%=pg%>"><li><img src="../admin/ico/double_right.svg"></li></a>
 				</ul>
 			</div>
 		</section>

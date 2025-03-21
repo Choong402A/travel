@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!-- 헤더부분 -->
-	<%@ include file="./top.jsp" %>
+	<%@ include file="../admin/top.jsp" %>
 	<!-- 헤더부분 -->
 	
 	<!-- 메인부분 -->
@@ -26,7 +26,7 @@
 	<!-- 메인부분 -->
 	
 	<!-- 푸터부분 -->
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="../admin/footer.jsp" %>
 	<!-- 푸터부분 -->
 </body>
 </html>
