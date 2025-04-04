@@ -9,4 +9,23 @@
   <servlet-name>index</servlet-name>
   <url-pattern>/index.do</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+  <servlet-name>product_write</servlet-name>
+  <servlet-class>product.product_write</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>product_write</servlet-name>
+  <url-pattern>/product/product_write.do</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  <servlet-name>a_projduct_listok</servlet-name>
+  <servlet-class>product.a_projduct_listok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>a_projduct_listok</servlet-name>
+  <url-pattern>/product/a_projduct_listok.do</url-pattern>
+  </servlet-mapping>  
+    
 </web-app>
