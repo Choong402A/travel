@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import admin.m_db;
+import common.m_db;
 
 public class m_notice_select {
 	Connection con = null;

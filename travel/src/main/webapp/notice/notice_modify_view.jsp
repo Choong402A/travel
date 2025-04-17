@@ -60,4 +60,4 @@
 	</section>
 </main>
 </form>
-<script src="../admin/js/notice/notice_modify.js?v=1"></script>
+<script src="../common/js/notice/notice_modify.js?v=1"></script>

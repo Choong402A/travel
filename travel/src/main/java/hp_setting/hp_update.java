@@ -3,7 +3,7 @@ package hp_setting;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import admin.m_db;
+import common.m_db;
 
 public class hp_update {
 	Connection con = null;			// DB에 쿼리문 넣기 위해 사용, close 해야 함

@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import admin.m_db;
+import common.m_db;
 
 public class m_notice_update {
 	Connection con = null;

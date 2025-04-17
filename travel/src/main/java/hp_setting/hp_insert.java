@@ -2,9 +2,8 @@ package hp_setting;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
-import admin.m_db;
+import common.m_db;
 
 public class hp_insert {
 	Connection con = null;			// DB에 쿼리문 넣기 위해 사용, close 해야 함

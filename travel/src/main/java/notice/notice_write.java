@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import admin.m_file;
-import admin.m_message;
+import common.m_file;
+import common.m_message;
 
 @MultipartConfig(
 	fileSizeThreshold = 1024 * 1024 * 2,  //2MB
@@ -40,7 +40,8 @@ public class notice_write extends HttpServlet {
 		if(n_yn==null){ n_yn = "N";}
 
 		this.mf = new m_file();
-		String fnm = mf.file_attach(n_filenm, request);
+		String save ="/notice_file/";
+		String fnm = mf.file_attach(n_filenm, save ,request);
 		
 		this.ndto = new noticeDTO();
 		this.ndto.setN_yn(n_yn);
@@ -54,10 +55,10 @@ public class notice_write extends HttpServlet {
 		
 		this.msg = new m_message();
 		if(this.result >0 ) {
-			this.alert="alert('공지가 등록되었습니다');"+"location.href='./notice_list.do';";
+			this.alert="alert('공지가 등록되었습니다');"+"location.href='../notice/notice_list.do';";
 			
 		} else {
-			this.alert="alert('공지가 등록되지 않았습니다.');"+"location.href='./notice_list.do';";
+			this.alert="alert('공지가 등록되지 않았습니다.');"+"location.href='../notice/notice_list.do';";
 		}
 		this.msg.message(this.alert,response);
 	}

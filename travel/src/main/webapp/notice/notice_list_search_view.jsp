@@ -143,4 +143,4 @@
 	</form>
 </main>
 
-<script src="../admin/js/notice/notice_list.js?v=1"></script>
+<script src="../common/js/notice/notice_list.js?v=1"></script>

@@ -13,7 +13,7 @@ public class notice_write_view extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("./notice_write.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("../notice/notice_write.jsp");
 		rd.forward(request, response);
 	}
 
