@@ -3,7 +3,7 @@ package notice;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import admin.m_db;
+import common.m_db;
 
 public class m_notice_insert{
 	Connection con = null;

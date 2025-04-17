@@ -41,4 +41,4 @@
 </main>
 </form>
 
-<script src="../admin/js/notice/notice_write.js?v=2"></script>
+<script src="../common/js/notice/notice_write.js?v=2"></script>

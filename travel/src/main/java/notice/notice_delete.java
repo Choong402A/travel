@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.m_db;
-import admin.m_message;
+import common.m_db;
+import common.m_message;
 
 
 public class notice_delete extends HttpServlet {
@@ -54,9 +54,9 @@ public class notice_delete extends HttpServlet {
 			}
 			
 			if(this.result>0) {
-				this.alert="alert('공지가 삭제되었습니다');"+"location.href='./notice_list.do';";
+				this.alert="alert('공지가 삭제되었습니다');"+"location.href='../notice/notice_list.do';";
 			}else {
-				this.alert="alert('시스템 문제로 공지삭제에 실패했습니다');"+"location.href='./notice_list.do';";
+				this.alert="alert('시스템 문제로 공지삭제에 실패했습니다');"+"location.href='../notice/notice_list.do';";
 			}
 			this.msg.message(this.alert,response);
 

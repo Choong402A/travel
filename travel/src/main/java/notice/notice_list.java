@@ -27,7 +27,7 @@ public class notice_list extends HttpServlet {
 		request.setAttribute("result", result); 
 		request.setAttribute("result_top", result_top); 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("./notice_list.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("../notice/notice_list.jsp");
 		rd.forward(request, response);
 
 	}

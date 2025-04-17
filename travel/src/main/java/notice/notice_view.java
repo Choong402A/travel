@@ -30,7 +30,7 @@ public class notice_view extends HttpServlet {
 		ArrayList<String> n_view = ns.notice_onedata(Integer.parseInt(nidx));
 		request.setAttribute("n_view", n_view);  //1개의 게시물 데이터 내용을 jsp로 전달 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("./notice_view.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("../notice/notice_view.jsp");
 		rd.forward(request, response);
 
 	}

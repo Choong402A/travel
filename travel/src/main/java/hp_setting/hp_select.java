@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import admin.m_db;
+import common.m_db;
 
 public class hp_select {
 	Connection con = null;			// DB에 쿼리문 넣기 위해 사용, close 해야 함

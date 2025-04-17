@@ -7,6 +7,10 @@
 * {
     box-sizing: border-box;
 }
+
+
+
+
 .logo_sm { 
     width: 30px; 
     object-fit: cover;
@@ -240,3 +244,8 @@
  .btncolor2 { 
     background-color: rgb(29, 29, 25);
  }
+ 
+ 
+ .html_message{
+	color: red;	
+}

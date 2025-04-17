@@ -28,7 +28,7 @@ public class notice_search extends HttpServlet {
 		request.setAttribute("result_top", result_top);
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("./notice_list_search.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("../notice/notice_list_search.jsp");
 		rd.forward(request, response);
 		
 		

@@ -19,7 +19,7 @@
 			<ul>
 				<li>첨부파일</li>
 				<%if(n_view.get(4)==null){ %>
-				<li><a href="#">첨부파일 없음</a></li>
+				<li><a>첨부파일 없음</a></li>
 				<% }else{ %>
 				<li><a href="../notice_file/<%=n_view.get(4)%>" target="_blank" ><%=n_view.get(4)%></a></li>
 				<% } %>
@@ -45,4 +45,4 @@
 	</section>
 </main>
 
-<script src="../admin/js/notice/notice_view.js?v=1"></script>
+<script src="../common/js/notice/notice_view.js?v=1"></script>

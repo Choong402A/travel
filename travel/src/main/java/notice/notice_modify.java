@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import admin.m_file;
-import admin.m_message;
+import common.m_file;
+import common.m_message;
 
 @MultipartConfig(
 	fileSizeThreshold = 1024 * 1024 * 2,  //2MB
@@ -43,7 +43,8 @@ public class notice_modify extends HttpServlet {
 		if(n_yn==null){ n_yn = "N";}
 
 		this.mf = new m_file();
-		String fnm = mf.file_attach(n_filenm, request);
+		String save ="/notice_file/";
+		String fnm = mf.file_attach(n_filenm, save, request);
 		
 		if(fnm==null){ fnm = current_f; }
 		
@@ -59,10 +60,10 @@ public class notice_modify extends HttpServlet {
 		
 		this.msg = new m_message();
 		if(this.result >0 ) {
-			this.alert="alert('공지가 수정되었습니다');"+"location.href='./notice_view.do?nidx=" + this.ndto.getNidx() + "';";
+			this.alert="alert('공지가 수정되었습니다');"+"location.href='../notice/notice_view.do?nidx=" + this.ndto.getNidx() + "';";
 			
 		} else {
-			this.alert="alert('시스템문제로 공지가 수정되지 않았습니다.');"+"location.href='./notice_view.do?nidx=" + this.ndto.getNidx() + "';";
+			this.alert="alert('시스템문제로 공지가 수정되지 않았습니다.');"+"location.href='../notice/notice_view.do?nidx=" + this.ndto.getNidx() + "';";
 			
 		}
 		this.msg.message(this.alert,response);

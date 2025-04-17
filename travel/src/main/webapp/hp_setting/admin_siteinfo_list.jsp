@@ -18,30 +18,30 @@ while(w < alldata.size()){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=alldata.get(w).get(0) %></title>
-    <link rel="stylesheet" type="text/css" href="./css/basic.css">
-    <link rel="stylesheet" type="text/css" href="./css/login.css?v=1">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/subpage.css?v=5">
-    <link rel="icon" href="./img/logo.png" sizes="128x128">
-    <link rel="icon" href="./img/logo.png" sizes="64x64">
-    <link rel="icon" href="./img/logo.png" sizes="32x32">
-    <link rel="icon" href="./img/logo.png" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="../common/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/login.css?v=1">
+    <link rel="stylesheet" type="text/css" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/subpage.css?v=5">
+    <link rel="icon" href="../common/img/logo.png" sizes="128x128">
+    <link rel="icon" href="../common/img/logo.png" sizes="64x64">
+    <link rel="icon" href="../common/img/logo.png" sizes="32x32">
+    <link rel="icon" href="../common/img/logo.png" sizes="16x16">
 </head>
 <form id="frm" method="post">
 <body>
 <header class="headercss">
     <div class="header_div">
-        <p><img src="./img/logo.png" class="logo_sm"> ADMINISTRATOR</p>
+        <p><img src="../common/img/logo.png" class="logo_sm"> ADMINISTRATOR</p>
         <p>홍길동 관리자 <a href="#">[개인정보 수정]</a> <a href="#">[로그아웃]</a></p>
     </div>
 </header>
 <nav class="navcss">
     <div class="nav_div">
         <ol>
-            <li title="쇼핑몰 상품관리">쇼핑몰 관리자 리스트</li>
-            <li title="쇼핑몰 상품관리">쇼핑몰 상품관리</li>
-            <li title="쇼핑몰 기본설정">쇼핑몰 기본설정</li>
-            <li title="쇼핑몰 공지사항">쇼핑몰 공지사항</li>
+            <li title="쇼핑몰 관리자 리스트"><a href="../admin/toadminlist.do">쇼핑몰 관리자 리스트</a></li>
+            <li title="쇼핑몰 상품관리"><a href="#">쇼핑몰 상품관리</a></li>
+            <li title="쇼핑몰 기본설정"><a href="../hp_setting/hp_list.do">쇼핑몰 기본설정</a></li>
+            <li title="쇼핑몰 공지사항"><a href="../notice/notice_list.do">쇼핑몰 공지사항</a></li>
         </ol>
     </div>
 
@@ -228,5 +228,5 @@ while(w < alldata.size()){
 break;
 }
 %>
-<script src="./js/hp_setting/admin_siteinfo_list.js?v=3"></script>
+<script src="../common/js/hp_setting/admin_siteinfo_list.js?v=3"></script>
 </html>
