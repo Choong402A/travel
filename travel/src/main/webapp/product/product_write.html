@@ -52,7 +52,7 @@
         <li>상품코드</li>
         <li>
             <input type="text" class="product_input1" name="pcode"> 
-            <input type="button" value="중복확인" title="중복확인" class="product_btn"> <span class="help_text">※ 상품코드는 절대 중복되지 않도록 합니다.</span>
+            <input type="button" value="중복확인" title="중복확인" class="product_btn" onclick="dupcheck()"> <span class="help_text">※ 상품코드는 절대 중복되지 않도록 합니다.</span>
         </li>
     </ul>
     <ul>
@@ -140,7 +140,7 @@
     </ul>
 </div>
 <div class="subpage_view4" style="text-align:center; margin-bottom: 100px;">
-    <input type="button" value="상품 리스트" onclick="location.href='./a_projduct_listok.do'" title="상품 리스트" class="p_button p_button_color1" style="margin-right: 5px;">
+    <input type="button" value="상품 리스트" onclick="location.href='./a_product_listok.do'" title="상품 리스트" class="p_button p_button_color1" style="margin-right: 5px;">
     <input type="button" value="상품 등록" onclick="gopage()" title="상품 등록" class="p_button p_button_color2">
     </span>
 </div>
@@ -154,6 +154,29 @@
 </footer>
 </body>
 <script>
+
+function dupcheck() {
+    var pcode = frm.pcode.value;
+
+    if (pcode === "") {
+        alert("상품코드를 입력해 주세요.");
+        return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "./product_write.do?pcode=" + pcode, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            if (xhr.responseText === "dup") {
+                alert("이미 존재하는 상품코드입니다.");
+            } else {
+                alert("사용 가능한 상품코드입니다.");
+            }
+        }
+    };
+    xhr.send();
+}
+
 function pdcode() {
 	var c = Math.floor(Math.random()*900000)+100000;
 	frm.pcode.value = c;
@@ -185,6 +208,21 @@ function calsel() {
 
 
 function gopage() {
+	if (frm.pname.value === "") {
+		alert("상품명을 입력해 주세요.");
+		frm.pname.focus();
+		return;
+	}
+	if (frm.pori.value === "" || isNaN(frm.pori.value)) {
+		alert("판매가격을 숫자로 입력해 주세요.");
+		frm.pori.focus();
+		return;
+	}
+	if (frm.pdetail.value === "") {
+		alert("상품 상세설명을 입력해 주세요.");
+		frm.pdetail.focus();
+		return;
+	}
 	frm.submit();
 }
 

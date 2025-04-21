@@ -33,7 +33,34 @@ public class product_write extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=utf-8");
 		this.pw = resp.getWriter();
-		
+		 String pcode = req.getParameter("pcode");
+		    try {
+		        this.con = this.db.getConnection();
+		        this.sql = "SELECT COUNT(*) FROM p_register WHERE pcode = ?";
+		        this.pst = this.con.prepareStatement(this.sql);
+		        this.pst.setString(1, pcode);
+		        this.rs = this.pst.executeQuery();
+		        
+		        if (rs.next()) {
+		            int count = rs.getInt(1);
+		            if (count > 0) {
+		                this.pw.write("dup");
+		            } else {
+		                this.pw.write("nodup");
+		            }
+		        }
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    } finally {
+		        try {
+		            if (this.rs != null) this.rs.close();
+		            if (this.pst != null) this.pst.close();
+		            if (this.con != null) this.con.close();
+		            this.pw.close();
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+		    }
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
@@ -78,7 +105,7 @@ public class product_write extends HttpServlet{
 				if(result > 0) {
 					this.pw.write("<script>"
 							+ "alert('상품이 정상 등록 되었습니다.');"
-							+ "location.href = './a_projduct_listok.do';"
+							+ "location.href = './a_product_listok.do';"
 							+ "</script>");
 				}else {
                     this.pw.write("<script>"
@@ -93,7 +120,7 @@ public class product_write extends HttpServlet{
 				if(msg.equals("ok")) {
 	                 this.pw.write("<script>"
 	                            + "alert('상품이 정상 등록 되었습니다.');"
-	                            + "location.href = './a_projduct_listok.do';"
+	                            + "location.href = './a_product_listok.do';"
 	                            + "</script>");
 				}else if (pi.msg.equals("error")) {
                     this.pw.write("<script>"

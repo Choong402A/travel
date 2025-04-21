@@ -127,11 +127,22 @@
     border-left: 1px solid rgb(81, 61, 61);
     border-right: 1px solid rgb(81, 61, 61);
 }
-.subpage_view3 > .pageing > li > img {
+.subpage_view3 > .pageing > li > a > img {
     width: 12px;
     height: 12px;
     object-fit: cover;
     vertical-align: middle;
+}
+.pageing > li.active-page {
+    background-color: #d2e9ff;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.pageing > li.active-page a {
+    color: black;
+    text-decoration: none;
 }
 .subpage_view4 {
     width: inherit;

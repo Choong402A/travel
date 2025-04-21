@@ -29,11 +29,11 @@ public class a_product {
 	
 	public ArrayList<ArrayList<String>> ap_data(String hw_select ,String hw_s_word){
 		try {
-			
+			// 전체 상품 조회
 			if (hw_s_word == null || hw_s_word.isEmpty()) {
 				this.con = this.db.getConnection();
 				this.sql = "select pidx,pcode,pimg,pname,pbigca,psmallca,pprice,psale,pcount,psell,psoldout, (select count(*) from p_register) as alltotal "
-						+ "from p_register order by pprice desc limit ?,?"; // 전체 상품 조회
+						+ "from p_register order by pprice desc limit ?,?"; 
 				this.pst = this.con.prepareStatement(this.sql);
 				this.pst.setInt(1, this.spage);
 				this.pst.setInt(2, this.ea);
@@ -58,7 +58,8 @@ public class a_product {
 					this.palldata.add(this.p_data);
 				}
 			}else { 
-			if(hw_select.equals("상품명")) {
+			//상품명 검색 조회
+			if("selname".equals(hw_select)) {
 			this.con = this.db.getConnection();
 			this.sql = "select pidx,pcode,pimg,pname,pbigca,psmallca,pprice,psale,pcount,psell,psoldout, (select count(*) from p_register WHERE pname LIKE ?) as alltotal "
 					+ "from p_register where pname LIKE ? order by pprice desc limit ?,?";
@@ -88,7 +89,9 @@ public class a_product {
 				this.p_data.add(this.rs.getString("alltotal"));
 				this.palldata.add(this.p_data);
 			}
-			}else if (hw_select.equals("상품코드")) {
+			}
+			//상품코드 검색 조회
+			else if ("selcode".equals(hw_select)) {
 				this.con = this.db.getConnection();
 				this.sql = "select pidx,pcode,pimg,pname,pbigca,psmallca,pprice,psale,pcount,psell,psoldout, (select count(*) from p_register WHERE pcode LIKE ?) as alltotal "
 						+ "from p_register where pcode LIKE ? order by pprice desc limit ?,?";
